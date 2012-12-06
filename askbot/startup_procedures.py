@@ -554,9 +554,6 @@ def test_haystack():
             if not hasattr(django_settings, 'HAYSTACK_SEARCH_ENGINE'):
                 message = "Please HAYSTACK_SEARCH_ENGINE to an appropriate value, value 'simple' can be used for basic testing"
                 errors.append(message)
-            if not hasattr(django_settings, 'HAYSTACK_SITECONF'):
-                message = 'Please add HAYSTACK_SITECONF = "askbot.search.haystack"'
-                errors.append(message)
             footer = 'Please refer to haystack documentation at http://django-haystack.readthedocs.org/en/v1.2.7/settings.html#haystack-search-engine'
             print_errors(errors, footer=footer)
 
