@@ -227,10 +227,6 @@ def test_template_loader():
         errors.append(
             'add "%s" to the beginning of the TEMPLATE_LOADERS' % current_loader
         )
-    elif django_settings.TEMPLATE_LOADERS[0] != current_loader:
-        errors.append(
-            '"%s" must be the first element of TEMPLATE_LOADERS' % current_loader
-        )
         
     print_errors(errors)
 
