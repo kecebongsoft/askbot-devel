@@ -408,11 +408,13 @@ def test_staticfiles():
         errors.append(
             'Path in the STATIC_URL must start and end with the /.'
         )
+    """
     if django_settings.ADMIN_MEDIA_PREFIX != static_url + 'admin/':
         errors.append(
             'Set ADMIN_MEDIA_PREFIX as: \n'
             "    ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'"
         )
+    """
 
     # django_settings.STATICFILES_DIRS can have strings or tuples
     staticfiles_dirs = [d[1] if isinstance(d, tuple) else d
