@@ -653,6 +653,7 @@ def test_tinymce():
 
     #check js root setting - before version 0.7.44 we used to have
     #"common" skin and after we combined it into the default
+    """
     js_root = getattr(django_settings, 'TINYMCE_JS_ROOT', '')
     old_relative_js_path = 'common/media/js/tinymce/'
     relative_js_path = 'default/media/js/tinymce/'
@@ -673,6 +674,7 @@ def test_tinymce():
         if urls_equal(url, old_expected_url):
             error_tpl += '\nNote: we have moved files from "common" into "default"'
         errors.append(error_tpl % relative_js_path)
+    """
 
     if errors:
         header = 'Please add the tynymce editor configuration ' + \
