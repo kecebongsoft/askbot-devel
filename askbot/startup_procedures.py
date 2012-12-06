@@ -868,10 +868,6 @@ def run_startup_tests():
             'value': True,
             'message': 'Please add: RECAPTCHA_USE_SSL = True'
         },
-        'HAYSTACK_SITECONF': {
-            'value': 'askbot.search.haystack',
-            'message': 'Please add: HAYSTACK_SITECONF = "askbot.search.haystack"'
-        }
     })
     settings_tester.run()
     test_media_url()
