@@ -122,14 +122,14 @@ def test_middleware():
         'askbot.middleware.cancel.CancelActionMiddleware',
         'django.middleware.transaction.TransactionMiddleware',
     ]
-    if 'debug_toolbar' in django_settings.INSTALLED_APPS:
-        required_middleware.append(
-            'debug_toolbar.middleware.DebugToolbarMiddleware',
-        )
     required_middleware.extend([
         'askbot.middleware.view_log.ViewLogMiddleware',
         'askbot.middleware.spaceless.SpacelessMiddleware',
     ])
+    if 'debug_toolbar' in django_settings.INSTALLED_APPS:
+        required_middleware.append(
+            'debug_toolbar.middleware.DebugToolbarMiddleware',
+        )
     found_middleware = [x for x in django_settings.MIDDLEWARE_CLASSES
                             if x in required_middleware]
     if found_middleware != required_middleware:
