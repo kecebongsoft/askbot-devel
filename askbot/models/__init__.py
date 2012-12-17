@@ -2296,8 +2296,10 @@ def user_get_absolute_url(self):
     return self.get_profile_url()
 
 def get_profile_link(self):
-    profile_link = u'<a href="%s">%s</a>' \
-        % (self.get_profile_url(), escape(self.username))
+    #profile_link = u'<a href="%s">%s</a>' \
+        #% (self.get_profile_url(), escape(self.username))
+    profile_link = u'%s' \
+        % (escape(self.username))
 
     return mark_safe(profile_link)
 
