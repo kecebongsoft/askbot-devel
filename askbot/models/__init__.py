@@ -2299,7 +2299,7 @@ def get_profile_link(self):
     #profile_link = u'<a href="%s">%s</a>' \
         #% (self.get_profile_url(), escape(self.username))
     profile_link = u'%s' \
-        % (escape(self.username))
+        % (escape(self.details.get_name))
 
     return mark_safe(profile_link)
 
