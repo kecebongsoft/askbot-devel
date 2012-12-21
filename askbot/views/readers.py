@@ -89,7 +89,7 @@ def questions(request, **kwargs):
     
     
     current_lang = request.session['django_language']
-    langs = settings.ASKBOT_LANG_TAGS
+    langs = settings.ASKBOT_LANG_TAGS.copy()
     if current_lang in langs:
         langs.pop(current_lang)
 
@@ -246,6 +246,7 @@ def questions(request, **kwargs):
             'query_string': search_state.query_string(),
             'search_state': search_state,
             'feed_url': context_feed_url,
+            'lang_tags': settings.ASKBOT_LANG_TAGS,
         }
 
         return render(request, 'main_page.html', template_data)
