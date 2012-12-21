@@ -86,6 +86,19 @@ def questions(request, **kwargs):
     qs, meta_data = models.Thread.objects.run_advanced_search(
                         request_user=request.user, search_state=search_state
                     )
+    
+    
+    current_lang = request.session['django_language']
+    langs = settings.ASKBOT_LANG_TAGS
+    if current_lang in langs:
+        langs.pop(current_lang)
+
+    if current_lang == 'en':
+        qs = qs.exclude(tags__name__in=langs)
+    else:
+        qs = qs.filter(tags__name=current_lang)
+        
+
     if meta_data['non_existing_tags']:
         search_state = search_state.remove_tags(meta_data['non_existing_tags'])
 
