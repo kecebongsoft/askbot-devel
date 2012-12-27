@@ -2323,6 +2323,7 @@ def user_get_primary_group(self):
     first non-personal non-everyone group
     works only for one real private group per-person
     """
+    return None
     groups = self.get_groups(private=True)
     for group in groups:
         if group.is_personal():
