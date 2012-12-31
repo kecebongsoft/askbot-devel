@@ -617,9 +617,9 @@ def test_tinymce():
         errors.append('add missing settings: %s' % ', '.join(missing_attrs))
 
     #check compressor setting
-    compressor_on = getattr(django_settings, 'TINYMCE_COMPRESSOR', False)
-    if compressor_on is False:
-        errors.append('add line: TINYMCE_COMPRESSOR = True')
+    #compressor_on = getattr(django_settings, 'TINYMCE_COMPRESSOR', False)
+    #if compressor_on is False:
+        #errors.append('add line: TINYMCE_COMPRESSOR = True')
         #todo: add pointer to instructions on how to debug tinymce:
         #1) add ('tiny_mce', os.path.join(ASKBOT_ROOT, 'media/js/tinymce')),
         #   to STATIFILES_DIRS
