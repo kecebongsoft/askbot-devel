@@ -223,8 +223,8 @@ class PostManager(BaseQuerySetManager):
 
         #possibly modify the is_private, if one of the groups
         #mandates explicit publishing of the posts
-        is_private = is_private #or \
-            #(thread and thread.requires_response_moderation(author))
+        is_private = is_private or \
+            (thread and thread.requires_response_moderation(author))
 
         parse_results = post.parse_and_save(author=author, is_private=is_private)
 
