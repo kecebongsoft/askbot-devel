@@ -30,12 +30,12 @@ sitemaps = {
 
 APP_PATH = os.path.dirname(__file__)
 urlpatterns = patterns('',
-    url(
-        r'^sitemap.xml$',
-        'django.contrib.sitemaps.views.sitemap',
-        {'sitemaps': sitemaps},
-        name='sitemap'
-    ),
+    #url(
+        #r'^sitemap.xml$',
+        #'django.contrib.sitemaps.views.sitemap',
+        #{'sitemaps': sitemaps},
+        #name='sitemap'
+    #),
     #no translation for this url!!
     url(r'import-data/$', views.writers.import_data, name='import_data'),
     url(r'^%s$' % _('about/'), views.meta.about, name='about'),
